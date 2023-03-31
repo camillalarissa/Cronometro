@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+    <link rel="shortcut icon" href="ic_timer_128_28821.ico" type="image/x-icon">
+    
+    <title>Cronometro</title>
+</head>
+<img src="imagem-missao.png" alt="imagem-missao">
+
+<body>
+    <div id="number-caixa">
+        <span class="number" id="horas">00</span>
+        <span class="number">:</span>
+        <span class="number" id="minutos">00</span>
+        <span class="number">:</span>
+        <span class="number"id="segundos">00</span>
+        <span class="number">:</span>
+        <span class="number number-cor" id="mili">00</span>
+    </div>
+    <div id="caixa-button">
+        <button id="start">Start</button>
+        <button id="stop">Stop</button>
+        <button id="reset">Reset</button>
+    </div>
+
+
+
+
+</body>
+<script>
+    let botaoStart = document.getElementById("start")
+    let botaoStop = document.getElementById("stop")
+    let botaoReset = document.getElementById("reset")
+    let mili =document.getElementById("mili")
+    let segundos =document.getElementById("segundos")
+    let minutos =document.getElementById("minutos")
+    let horas =document.getElementById("horas")
+
+    let startTimer
+    let ms ="00"
+    let seg ="00"
+    let min ="00"
+    let hr ="00"
+
+    function start() {
+        startTimer = setInterval(function () {
+            
+    ms++ 
+    if(ms <10){ /// adicionando o 0 na frente do numeroo
+           ms ="0" + ms ///// 
+        }
+    if(ms === 100){
+    seg++
+
+    if(seg <10){ /// adicionando o 0 na frente do numeroo
+           seg ="0" + seg ///// 
+        }
+        
+    ms=0
+
+    if(seg === 60){
+        min++
+        
+        if(min <10){ /// adicionando o 0 na frente do numeroo
+           min ="0" + min ///// 
+        }
+        seg=0
+
+    }
+
+    if( min === 60){
+        hr++
+
+        if(hr <10){ /// adicionando o 0 na frente do numeroo
+           hr ="0" + hr ///// 
+        }
+        min=0
+    }
+
+
+    }
+    atualizaValor()
+        }, 10);
+    }
+
+    
+
+function stop(){
+
+    clearInterval(startTimer)
+}
+
+function reset(){
+
+clearInterval(startTimer)
+ms="00"
+seg="00"
+min="00"
+hr="00"
+atualizaValor()
+}
+
+
+
+
+
+    function atualizaValor(){
+        mili.innerHTML = ms
+        segundos.innerHTML = seg
+        minutos.innerHTML = min
+        horas.innerHTML = hr
+    }
+    botaoStart.addEventListener("click", start)
+
+botaoStop.addEventListener("click",stop)
+
+botaoReset.addEventListener("click", reset)
+
+
+
+
+
+
+
+</script>
+
+</html>

@@ -1,0 +1,75 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Acme', sans-serif;
+
+}
+
+body {
+    background: black;
+}
+
+img {
+    height: 350px;
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+#number-caixa {
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+    background: white;
+    width: 300px;
+    border-radius: 8px;
+   padding-left: 10px;
+
+
+}
+
+.number {
+    text-align: center;
+    font-size: 50px;
+    font-weight: 50px;
+}
+
+.number-cor {
+    color: rgb(53, 66, 40);
+}
+
+#caixa-button {
+
+    text-align: center;
+    margin-top: 20px;
+
+
+}
+
+button {
+    color: rgb(53, 66, 40);
+    padding: 5px 8px;
+    margin-left: 25px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+
+}
+
+button:hover {
+    opacity: 0.8;
+
+}
+#stop{
+    color: brown;
+}
+
+#start{
+    color: blue;
+
+}
+
+#reset{
+    color: darkgoldenrod;
+}
